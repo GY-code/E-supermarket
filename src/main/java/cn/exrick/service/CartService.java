@@ -12,11 +12,11 @@ public interface CartService {
 
     List<CartProduct> getCartList(long userId);
 
-    int updateCartNum(long userId, long itemId, int num, String checked);
+    int updateCartNum(long userId, long itemId, int num, int checked);
 
     int deleteCartItem(long userId, long itemId);
 
-    int checkAll(long userId, String checked);
+    int checkAll(long userId, int checked);
 
     /**
      * 删除全部勾选的

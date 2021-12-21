@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.exrick.mapper.TbCouponMapper">
+    <select id="getCouponList" parameterType="long" resultType="cn.exrick.pojo.front.Coupon">
+        select b.coupon_id,b.criterion,b.bonus,c.name,a.num,b.from_time,b.to_time
+        from customer_coupon a, coupon b,tb_item_cat c
+        <where>
+            a.coupon_id = b.coupon_id
+            and c.id = b.category_id
+            <if test="userId != null">and a.customer_id = #{userId}</if>
+        </where>
+    </select>
+
+    <select id="getAllCouponList" resultType="cn.exrick.pojo.front.Coupon">
+        select b.coupon_id,b.criterion,b.bonus,a.name,b.from_time,b.to_time from tb_coupon b, tb_item_cat a
+        <where>
+            a.id = b.category_id
+        </where>
+    </select>
+
+    <insert id="addCoupon" parameterType="map">
+        insert into tb_customer_coupon(customer_id, coupon_id, num)
+        values (#{userId},#{couponId},1)
+    </insert>
+
+    <update id="updateCouponCustomer" parameterType="map">
+        update tb_customer_coupon 
+        <set>
+            num = num-1
+        </set>
+        <where>
+            <if test="userId != null">
+                customer_id = #{userId}
+            </if>
+            <if test="couponId != null">
+                and coupon_id = #{couponId}
+            </if>
+        </where>
+    </update>
+
+    <resultMap id="getCouponUser" type="cn.exrick.pojo.front.Coupon">
+        <result column="coupon_id" property="couponId"/>
+    </resultMap>
+    <select id="getCouponByUser" parameterType="map" resultMap="getCouponUser">
+        select coupon_id from tb_customer_coupon
+        <where>
+            <if test="userId != null">
+                customer_id = #{userId}
+            </if>
+            <if test="couponId != null">
+                and coupon_id = #{couponId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertCouponToOrder" parameterType="map">
+        insert into tb_coupon_order(coupon_id,order_id)
+        values (#{couponId},#{orderId})
+    </insert>
+</mapper>

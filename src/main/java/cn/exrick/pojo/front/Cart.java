@@ -8,45 +8,53 @@ import java.util.Date;
  */
 public class Cart implements Serializable {
 
-    private Long userId;
+    private Long cartId;
 
-    private Long productId;
+    private Long goodsId;
 
-    private String checked;
+    private int checked;
 
-    private int productNum;
+    private int num;
 
     private Date joinTime;
 
-    public Long getUserId() {
-        return userId;
+    public Long getCartId() {
+        return cartId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setCartId(Long cartId) {
+        this.cartId = cartId;
     }
 
-    public Long getProductId() {
-        return productId;
+    public Long getGoodsId() {
+        return goodsId;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setGoodsId(Long goodsId) {
+        this.goodsId = goodsId;
     }
 
-    public String getChecked() {
+    public int getChecked() {
         return checked;
     }
 
-    public void setChecked(String checked) {
+    public void setChecked(int checked) {
         this.checked = checked;
     }
 
-    public int getProductNum() {
-        return productNum;
+    public int getNum() {
+        return num;
     }
 
-    public void setProductNum(int productNum) {
-        this.productNum = productNum;
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public Date getJoinTime() {
+        return joinTime;
+    }
+
+    public void setJoinTime(Date joinTime) {
+        this.joinTime = joinTime;
     }
 }
