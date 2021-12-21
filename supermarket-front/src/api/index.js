@@ -15,6 +15,10 @@ export const userInfo = (params) => {
 export const register = (params) => {
   return http.fetchPost('/member/register', params)
 }
+// 获取用户信息
+export const custinfo = (params) => {
+  return http.fetchPost('/member/custinfo', params)
+}
 // 上传图片
 export const upload = (params) => {
   return http.fetchPost('/member/imgaeUpload', params)

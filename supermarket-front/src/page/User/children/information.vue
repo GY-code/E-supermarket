@@ -7,6 +7,7 @@
           <div class="r-box">
             <h3 style="margin-left: 13px;">修改头像</h3>
             <y-button text="上传头像" classStyle="main-btn" style="margin: 0;" @btnClick="editAvatar()"></y-button>
+
           </div>
         </div>
         <div class="edit-avatar" v-if="editAvatarShow">
@@ -70,13 +71,29 @@
             </div>
           </y-shelf>
         </div>
+        <div>
+          <div class="basicInfo">
+            余额:
+          </div>
+          <div class="basicInfo">
+            积分:
+          </div>
+          <div class="basicInfo">
+            累计消费金额:
+          </div>
+          <div class="basicInfo">
+            会员等级:
+          </div>
+        </div>
       </div>
+
     </y-shelf>
   </div>
+
 </template>
 <script>
   import YButton from '/components/YButton'
-  import { upload } from '/api/index'
+  import { upload, custinfo } from '/api/index'
   import YShelf from '/components/shelf'
   import vueCropper from 'vue-cropper'
   import { mapState, mapMutations } from 'vuex'
@@ -106,7 +123,13 @@
           fixed: true
         },
         userId: '',
-        token: ''
+        token: '',
+
+        yue: ' ',
+        jifen: ' ',
+        leiji: ' ',
+        huiyuan: ' '
+
       }
     },
     computed: {
@@ -116,6 +139,14 @@
       ...mapMutations([
         'RECORD_USERINFO'
       ]),
+      _custinfo () {
+        custinfo({userId: this.userId}).then(res => {
+          this.yue = res.result[0]
+          this.jifen = res.result[1]
+          this.leiji = res.result[2]
+          this.huiyuan = res.result[3]
+        })
+      },
       message (m) {
         this.$message(m)
       },
@@ -180,6 +211,7 @@
     created () {
       this.userId = getStore('userId')
       this.token = getStore('token')
+      this._custinfo()
     },
     components: {
       YButton,
@@ -190,6 +222,11 @@
 </script>
 <style lang="scss" scoped>
   @import "../../../assets/style/mixin";
+
+  .basicInfo {
+    margin-left: 50px;
+    font-size:20px ;
+  }
 
   .avatar-box {
     height: 124px;
