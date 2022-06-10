@@ -103,7 +103,7 @@ In this system, we store all the information of merchants' products and users. A
 
 #### Contribute
 
-1. Fork this warehouse
+1. Fork this repository
 2. Create a new Feat_xxx branch
 3. Submit code
 4. Create a new Pull Request
