@@ -83,22 +83,22 @@ public class GoodsController {
 
         AllGoodsResult allGoodsResult=new AllGoodsResult();
 
-//        String redisKey="allGoods:"+page+"_"+size+"_"+sort+"_"+cid+"_"+priceGt+"_"+priceLte;
-//        //读取缓存
-//        String temp=jedisClient.get(redisKey);
-//        if(StringUtils.isNotBlank(temp)) {
-//            allGoodsResult = new Gson().fromJson(temp, AllGoodsResult.class);
-//            log.info("读取了" + redisKey + "缓存");
-//            return new ResultUtil<AllGoodsResult>().setData(allGoodsResult);
-//        }
+        String redisKey="allGoods:"+page+"_"+size+"_"+sort+"_"+cid+"_"+priceGt+"_"+priceLte;
+        //读取缓存
+        String temp=jedisClient.get(redisKey);
+        if(StringUtils.isNotBlank(temp)) {
+            allGoodsResult = new Gson().fromJson(temp, AllGoodsResult.class);
+            log.info("读取了" + redisKey + "缓存");
+            return new ResultUtil<AllGoodsResult>().setData(allGoodsResult);
+        }
 
         allGoodsResult=contentService.getAllProduct(page,size,sort,cid,priceGt,priceLte);
 
         //更新缓存
-//        String value=new Gson().toJson(allGoodsResult);
-//        jedisClient.set(redisKey,value);
-//        jedisClient.expire(redisKey,604800);
-//        log.info("更新了"+redisKey+"缓存");
+        String value=new Gson().toJson(allGoodsResult);
+        jedisClient.set(redisKey,value);
+        jedisClient.expire(redisKey,604800);
+        log.info("更新了"+redisKey+"缓存");
         return new ResultUtil<AllGoodsResult>().setData(allGoodsResult);
     }
 
@@ -113,23 +113,22 @@ public class GoodsController {
 
         SearchResult searchResult=new SearchResult();
 
-//        String redisKey="search:"+key+"_"+page+"_"+size+"_"+sort+"_"+priceGt+"_"+priceLte;
-//        //读取缓存
-//        SearchResult searchResult=new SearchResult();
-//        String temp=jedisClient.get(redisKey);
-//        if(StringUtils.isNotBlank(temp)){
-//            searchResult=new Gson().fromJson(temp,SearchResult.class);
-//            log.info("读取了"+redisKey+"缓存");
-//            return new ResultUtil<SearchResult>().setData(searchResult);
-//        }
+        String redisKey="search:"+key+"_"+page+"_"+size+"_"+sort+"_"+priceGt+"_"+priceLte;
+        //读取缓存
+        String temp=jedisClient.get(redisKey);
+        if(StringUtils.isNotBlank(temp)){
+            searchResult=new Gson().fromJson(temp,SearchResult.class);
+            log.info("读取了"+redisKey+"缓存");
+            return new ResultUtil<SearchResult>().setData(searchResult);
+        }
 
         searchResult=searchService.search(key,page,size,sort,priceGt,priceLte);
 
         //更新缓存
-//        String value=new Gson().toJson(searchResult);
-//        jedisClient.set(redisKey,value);
-//        jedisClient.expire(redisKey,604800);
-//        log.info("更新了"+redisKey+"缓存");
+        String value=new Gson().toJson(searchResult);
+        jedisClient.set(redisKey,value);
+        jedisClient.expire(redisKey,604800);
+        log.info("更新了"+redisKey+"缓存");
         return new ResultUtil<SearchResult>().setData(searchResult);
     }
 

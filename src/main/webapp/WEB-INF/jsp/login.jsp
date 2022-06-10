@@ -2,13 +2,13 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>XMall后台管理系统</title>
+    <title>超市电商管理系统</title>
     <link rel="Shortcut Icon" href="icon/all.png" />
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统">
-    <meta name="description" content="XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
+    <meta name="keywords" content="超市电商管理系统 v1.0,XMall,超市电商后台管理系统">
+    <meta name="description" content="超市电商管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Meta tag Keywords -->
@@ -81,7 +81,7 @@
     <div class="center-container">
         <!--header-->
         <div class="header-w3l">
-            <h1>XMall<span class="title">后台管理系统</span></h1>
+            <h1><span class="title">超市电商后台管理系统</span></h1>
         </div>
         <!--//header-->
         <div class="main-content-agile">
@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="sub-w3l">
-                        <h6 onclick="forgetPass()" style="cursor: pointer"><a>游客体验账号密码?</a></h6>
+                       <%-- <h6 onclick="forgetPass()" style="cursor: pointer"><a>游客体验账号密码?</a></h6>--%>
                         <div class="right-w3l">
                             <input id="loginButton" type="button" class="login" value="登录">
                         </div>
@@ -112,7 +112,7 @@
 
         <!--footer-->
         <div class="footer">
-            <p>&copy; 2017 XMall. All rights reserved | Design by <a href="http://blog.exrick.cn" target="_blank">Exrick</a></p>
+            <p>&copy;数据库实践课--超市电商管理系统后台登录</p>
         </div>
         <!--//footer-->
     </div>
@@ -208,11 +208,11 @@
         url:"/sys/base",
         type: 'GET',
         success:function (data) {
-            if(data.success!==true){
+            if(data.success!=true){
                 layer.alert(data.message,{title: '错误信息',icon: 2});
                 return;
             }
-            if(data.result.hasLogNotice===1){
+            if(data.result.hasLogNotice==1){
                 layer.alert(data.result.logNotice, {
                     title: "通知"
                 });

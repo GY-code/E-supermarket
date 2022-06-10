@@ -20,7 +20,7 @@ public class MybatisUtil {
      * 使用静态代码块加载SqlSessionFactory
      */
     static {
-        String resource = "mybatis/SqlMapConfig.xml";
+        String resource = "mybatis/Mybatis.xml";
         InputStream inputStream = null;
         try {
             inputStream = Resources.getResourceAsStream(resource);

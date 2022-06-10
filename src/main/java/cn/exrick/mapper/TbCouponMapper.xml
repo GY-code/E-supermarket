@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.exrick.mapper.TbCouponMapper">
-    <select id="getCouponList" parameterType="long" resultType="cn.exrick.pojo.front.Coupon">
-        select b.coupon_id,b.criterion,b.bonus,c.name,a.num,b.from_time,b.to_time
-        from customer_coupon a, coupon b,tb_item_cat c
+    <resultMap id="getCouponListMap" type="cn.exrick.pojo.front.Coupon">
+        <result property="couponId" column="coupon_id"/>
+        <result property="criterion" column="criterion"/>
+        <result property="bonus" column="bonus"/>
+        <result property="name" column="name"/>
+        <result property="num" column="num"/>
+        <result property="fromTime" column="from_time"/>
+        <result property="toTime" column="to_time"/>
+        <result property="url" column="url"/>
+        <result property="point" column="point"/>
+    </resultMap>
+    <select id="getCouponList" parameterType="long" resultMap="getCouponListMap">
+        select b.coupon_id,b.criterion,b.bonus,c.name,a.num,b.from_time,b.to_time,b.url,b.point
+        from tb_customer_coupon a, tb_coupon b,tb_item_cat c
         <where>
             a.coupon_id = b.coupon_id
             and c.id = b.category_id
@@ -12,7 +23,7 @@
     </select>
 
     <select id="getAllCouponList" resultType="cn.exrick.pojo.front.Coupon">
-        select b.coupon_id,b.criterion,b.bonus,a.name,b.from_time,b.to_time from tb_coupon b, tb_item_cat a
+        select b.coupon_id,b.criterion,b.bonus,a.name,b.from_time,b.to_time,b.url from tb_coupon b, tb_item_cat a
         <where>
             a.id = b.category_id
         </where>
@@ -26,7 +37,7 @@
     <update id="updateCouponCustomer" parameterType="map">
         update tb_customer_coupon 
         <set>
-            num = num-1
+            num = num+1
         </set>
         <where>
             <if test="userId != null">
@@ -57,4 +68,74 @@
         insert into tb_coupon_order(coupon_id,order_id)
         values (#{couponId},#{orderId})
     </insert>
+
+    <resultMap id="getPPCOp" type="java.util.HashMap">
+<!--        <result column="couponId" property="couponId"/>-->
+    </resultMap>
+    <select id="getPerfectCoupon" parameterType="map" resultType="java.lang.Long">
+        SELECT tb_customer_coupon.coupon_id
+        FROM tb_customer_coupon,
+        tb_coupon
+        WHERE tb_customer_coupon.coupon_id = tb_coupon.coupon_id
+        AND tb_customer_coupon.customer_id = #{userId}
+        AND tb_coupon.category_id = #{categoryId}
+        AND tb_coupon.criterion &lt;= #{price}
+        ORDER BY tb_coupon.bonus DESC
+        LIMIT 1
+    </select>
+
+    <select id="getCategoryByUserId" parameterType="long" resultType="java.lang.Long">
+        select distinct c.cid
+        from tb_cart a, tb_cart_customer b,tb_item c
+        <where>
+            a.customer_id = #{userId}
+            and a.cart_id = b.cart_id
+            and b.product_id = c.id
+        </where>
+    </select>
+
+    <select id="getCouponById" resultMap="getCouponListMap">
+        select b.coupon_id,b.criterion,b.bonus,c.name,b.from_time,b.to_time,b.url,b.point
+        from tb_coupon b,tb_item_cat c
+        <where>
+            c.id = b.category_id
+            and coupon_id = #{couponId}
+        </where>
+    </select>
+
+    <select id="getPrice" parameterType="map" resultType="java.lang.Double">
+        SELECT SUM(tb_item.price * tb_cart_customer.product_num)
+        FROM tb_cart_customer,tb_item,tb_cart
+        WHERE tb_cart_customer.product_id = tb_item.id
+        AND tb_cart_customer.cart_id = tb_cart.cart_id
+        AND tb_item.cid = #{categoryId}
+        AND tb_cart.customer_id = #{userId}
+    </select>
+
+    <select id="getUsedCoupon" parameterType="map" resultType="java.lang.Long">
+        SELECT tb_customer_coupon.coupon_id
+        FROM tb_customer_coupon,
+        tb_coupon
+        WHERE tb_customer_coupon.coupon_id = tb_coupon.coupon_id
+        AND tb_customer_coupon.customer_id = #{userId}
+        AND tb_coupon.category_id = #{categoryId}
+        AND tb_coupon.criterion &lt;= #{price}
+    </select>
+
+    <select id="getPoint" parameterType="long" resultType="cn.exrick.pojo.front.Coupon">
+        select * from tb_coupon
+        <where>
+            coupon_id = #{couponId}
+        </where>
+    </select>
+
+    <update id="updatePoint" parameterType="map">
+        update tb_member
+        <set>
+            points = points - #{point}
+        </set>
+        <where>
+            id = #{userId}
+        </where>
+    </update>
 </mapper>

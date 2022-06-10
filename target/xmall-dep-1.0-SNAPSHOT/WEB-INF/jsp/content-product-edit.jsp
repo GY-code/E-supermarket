@@ -83,14 +83,14 @@
         </div>
         <input type="text" name="picUrl" id="picUrl" hidden/>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">展示缩略图片上传：</label>
+            <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <div class="uploader-list-container">
                     <div class="queueList">
                         <div id="dndArea" class="placeholder">
                             <div name="filePicker" id="filePicker-2"></div>
                             <p>或将照片拖到这里，最多可选1张</p>
-                            <p style="color: tomato">不上传则代表不更改原缩略图</p>
+                            <p style="color: tomato">默认选择默认商品图片</p>
                         </div>
                     </div>
                     <div class="statusBar" style="display:none;">

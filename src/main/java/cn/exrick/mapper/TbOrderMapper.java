@@ -5,6 +5,7 @@ import cn.exrick.pojo.TbOrderExample;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import cn.exrick.pojo.dto.OrderChartData;
 import org.apache.ibatis.annotations.Param;
@@ -37,4 +38,6 @@ public interface TbOrderMapper {
     List<OrderChartData> selectOrderChart(@Param("startTime") Date startTime, @Param("endTime") Date endTime);
 
     List<OrderChartData> selectOrderChartByYear(@Param("year") int year);
+
+    int updateBuyMessage(Map map);
 }

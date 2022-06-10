@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="Exrick">
     <link rel="Shortcut Icon" href="icon/all.png" />
-    <title>XMall后台管理系统 v1.0</title>
-    <meta name="keywords" content="XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统">
-    <meta name="description" content="XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
+    <title>超市电商管理系统 v1.0</title>
+    <meta name="keywords" content="超市电商管理系统 v1.0,XMall,超市电商后台管理系统">
+    <meta name="description" content="超市电商管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
 
     <title>Lock Screen</title>
 

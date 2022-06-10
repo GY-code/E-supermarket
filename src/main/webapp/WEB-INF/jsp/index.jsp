@@ -22,30 +22,30 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>XMall后台管理系统 v1.1</title>
-    <meta name="keywords" content="XMall后台管理系统 v1.1,XMall,XMall购物商城后台管理系统">
-    <meta name="description" content="XMall后台管理系统 v1.1，是一款电商后台管理系统，适合中小型CMS后台系统。">
+    <title>超市电商管理系统 </title>
+    <meta name="keywords" content="超市电商管理系统 ,XMall,超市电商后台管理系统">
+    <meta name="description" content="超市电商管理系统 ，是一款电商后台管理系统，适合中小型CMS后台系统。">
 </head>
 <body>
 <header class="navbar-wrapper">
     <div class="navbar navbar-fixed-top">
-        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/">XMall后台管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/">XMall后台管理系统</a>
-            <span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.1</span>
+        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/">超市电商管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/">超市电商管理系统</a>
+            <span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span>
             <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
-            <nav class="nav navbar-nav">
+            <%--<nav class="nav navbar-nav">
                 <ul class="cl">
                     <li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onclick="product_add('添加商品','product-add')"><i class="Hui-iconfont">&#xe620;</i> 商品</a></li>
                             <li><a href="javascript:;" onclick="member_add('添加用户','member-add','','630')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
                         </ul>
-                        <li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
+                        &lt;%&ndash;<li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
                         <li class="navbar-levelone"><a href="javascript:;">财务</a></li>
                         <li ><a href="http://xpay.exrick.cn" target="_blank">XPay支付系统</a></li>
-                        <li ><a href="http://xmall.exrick.cn" target="_blank">商城前台</a></li>
+                        <li ><a href="http://xmall.exrick.cn" target="_blank">商城前台</a></li>&ndash;%&gt;
                     </li>
                 </ul>
-            </nav>
+            </nav>--%>
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
                     <li style="right:5px" id="role"></li>
@@ -57,9 +57,9 @@
                             <li><a onclick="logout()">退出</a></li>
                         </ul>
                     </li>
-                    <li id="thanks"> <a onclick="thanks()" title="捐赠"><i class="Hui-iconfont" style="font-size:18px">&#xe6bb;</i></a> </li>
+                    <%--<li id="thanks"> <a onclick="thanks()" title="捐赠"><i class="Hui-iconfont" style="font-size:18px">&#xe6bb;</i></a> </li>
                     <li id="LockScreen"> <a href="lock-screen" title="锁屏"><i class="Hui-iconfont" style="font-size:18px">&#xe60e;</i></a> </li>
-                    <li id="Hui-msg"> <a onclick="thanks()" title="消息"><span class="badge badge-danger">3</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+                    <li id="Hui-msg"> <a onclick="thanks()" title="消息"><span class="badge badge-danger">3</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>--%>
                     <li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" data-val="default" title="默认（蓝色）">默认（蓝色）</a></li>
@@ -77,18 +77,18 @@
 </header>
 <aside class="Hui-aside">
     <div class="menu_dropdown bk_2">
-        <dl id="menu-article">
+        <%--<dl id="menu-article">
             <dt><i class="Hui-iconfont">&#xe616;</i> 商城内容管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="content-header-list" data-title="首页导航栏管理" href="javascript:void(0)">首页导航栏管理</a></li>
+                   &lt;%&ndash; <li><a data-href="content-header-list" data-title="首页导航栏管理" href="javascript:void(0)">首页导航栏管理</a></li>&ndash;%&gt;
                     <li><a data-href="content-panel" data-title="首页板块管理" href="javascript:void(0)">首页板块管理</a></li>
-                    <li><a data-href="content-banner-list" data-title="首页轮播图管理" href="javascript:void(0)">首页轮播图管理</a></li>
+                    &lt;%&ndash;<li><a data-href="content-banner-list" data-title="首页轮播图管理" href="javascript:void(0)">首页轮播图管理</a></li>&ndash;%&gt;
                     <li><a data-href="content-index-list" data-title="首页板块内容管理" href="javascript:void(0)">首页板块内容管理</a></li>
-                    <li><a data-href="content-other-list" data-title="其它板块内容管理" href="javascript:void(0)">其它板块内容管理</a></li>
+                    &lt;%&ndash;<li><a data-href="content-other-list" data-title="其它板块内容管理" href="javascript:void(0)">其它板块内容管理</a></li>&ndash;%&gt;
                 </ul>
             </dd>
-        </dl>
+        </dl>--%>
         <dl id="menu-picture">
             <dt><i class="Hui-iconfont">&#xe634;</i> 缓存管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -115,7 +115,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-search">
+        <%--<dl id="menu-search">
             <dt><i class="Hui-iconfont">&#xe665;</i> 搜索管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -123,15 +123,15 @@
                     <li><a data-href="dict-list" data-title="词典库管理" href="javascript:void(0)">词典库管理</a></li>
                 </ul>
             </dd>
-        </dl>
-        <dl id="menu-comments">
+        </dl>--%>
+        <%--<dl id="menu-comments">
             <dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
                     <li><a data-href="http://changyan.kuaizhan.com/" data-title="畅言评论管理" href="javascript:void(0)">畅言评论管理</a></li>
                 </ul>
             </dd>
-        </dl>
+        </dl>--%>
         <dl id="menu-member">
             <dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -141,7 +141,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-admin">
+        <%--<dl id="menu-admin">
             <dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -150,16 +150,16 @@
                     <li><a data-href="admin-list" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
                 </ul>
             </dd>
-        </dl>
-        <dl id="menu-chart">
+        </dl>--%>
+        <%--<dl id="menu-chart">
             <dt><i class="Hui-iconfont">&#xe61e;</i> 统计报表<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
                     <li><a data-href="chart-order" data-title="订单销量统计" href="javascript:void(0)">订单销量统计</a></li>
                 </ul>
             </dd>
-        </dl>
-        <dl id="menu-system">
+        </dl>--%>
+        <%--<dl id="menu-system">
             <dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -169,7 +169,7 @@
                     <li><a data-href="system-log" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
                 </ul>
             </dd>
-        </dl>
+        </dl>--%>
     </div>
 
     <div class="menu_dropdown bk_2" style="display:none">

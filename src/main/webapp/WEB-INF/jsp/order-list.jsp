@@ -37,7 +37,7 @@
         <div class="cl pd-5 bg-1 bk-gray mt-20">
             <span class="l">
                 <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-                <a href="javascript:;" onclick="orderPrint()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe652;</i> 订单打印</a>
+                <%--<a href="javascript:;" onclick="orderPrint()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe652;</i> 订单打印</a>--%>
             </span>
             <span class="r">共有数据：<strong id="num">0</strong> 条</span>
         </div>

@@ -4,6 +4,23 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Coupon implements Serializable {
+    private long userId;
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
 
     private long couponId;
     private int criterion;
@@ -12,6 +29,34 @@ public class Coupon implements Serializable {
     private Date fromTime;
     private Date toTime;
     private int num;
+    private int point;
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    private boolean isRec;
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public boolean isRec() {
+        return isRec;
+    }
+
+    public void setRec(boolean rec) {
+        isRec = rec;
+    }
 
     @Override
     public String toString() {

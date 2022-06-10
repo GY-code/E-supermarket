@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.exrick.mapper.TbDeliverMapper">
+    <resultMap id="getDeliverOrder" type="cn.exrick.pojo.front.DeliverOrder">
+        <result column="order_id" property="orderId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="user_name" property="userName"/>
+        <result column="street_name" property="streetName"/>
+    </resultMap>
+    <select id="getUnfinishedOrderList" resultMap="getDeliverOrder">
+        select a.order_id, a.create_time, b.user_name, b.street_name
+        from tb_order a,tb_address b
+        <where>
+            a.user_id = b.user_id
+            and a.status = 1
+            and b.is_default = 1
+        </where>
+    </select>
+    <resultMap id="getDeliverOrderDetail" type="cn.exrick.pojo.front.DeliverOrder">
+        <result column="order_id" property="orderId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="user_name" property="userName"/>
+        <result column="tel" property="tel"/>
+        <result column="street_name" property="streetName"/>
+        <result column="buyer_message" property="buyerMessage"/>
+        <result column="payment" property="payment"/>
+    </resultMap>
+    <select id="getOrderDetail" parameterType="java.lang.String" resultMap="getDeliverOrderDetail">
+        select a.order_id, a.create_time, b.user_name, b.tel, b.street_name, a.buyer_message, a.payment
+        from tb_order a,tb_address b
+        <where>
+            a.user_id = b.user_id
+            and a.order_id = #{orderId}
+        </where>
+    </select>
+
+    <select id="getHistoryOrder" resultMap="getDeliverOrder">
+        select a.order_id, a.create_time, b.user_name, b.street_name
+        from tb_order a,tb_address b
+        <where>
+            a.user_id = b.user_id
+            and a.status = 4
+            and b.is_default = 1
+            and a.deliver_man_id = 1
+        </where>
+    </select>
+    
+    <update id="updateOrderStatus" parameterType="map">
+        update tb_order
+        <set>
+            status = 4,
+            deliver_man_id = 1
+        </set>
+        <where>
+            order_id = #{orderId}
+        </where>
+    </update>
+
+    <select id="getDeliverInfo" resultType="cn.exrick.pojo.front.Deliver">
+        select a.name, a.gender, a.rate, count(b.order_id) as totalOrder, a.tel, a.birth
+        from tb_delivery_man a, tb_order b
+        where a.id = b.deliver_man_id
+        and a.id = 1
+        group by a.id, a.name, a.gender, a.rate ,a.tel, a.birth
+    </select>
+</mapper>

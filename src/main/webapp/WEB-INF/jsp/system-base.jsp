@@ -71,7 +71,7 @@
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">
-                上传目录配置：</label>
+                上传目录配置：</label>Q
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" id="uploadPath" name="uploadPath" placeholder="默认为upload" value="" class="input-text">
             </div>
@@ -80,13 +80,13 @@
             <label class="form-label col-xs-4 col-sm-2">
                 底部版权信息：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="copyright" name="copyright" placeholder="&copy; 2017 exrick.cn" value="" class="input-text">
+                <input type="text" id="copyright" name="copyright" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">前台URL：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" id="frontUrl" name="frontUrl" placeholder="http://blog.exrick.cn" value="" class="input-text">
+                <input type="text" id="frontUrl" name="frontUrl" value="" class="input-text">
             </div>
         </div>
         <div class="row cl">
@@ -133,12 +133,12 @@
                 <textarea id="allNotice" name="allNotice" class="textarea"></textarea>
             </div>
         </div>
-        <div class="row cl">
+        <%--<div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">公告：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <textarea id="notice" name="notice" style="width:100%;visibility:hidden;"></textarea>
             </div>
-        </div>
+        </div>--%>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">更新日志：</label>
             <div class="formControls col-xs-8 col-sm-9">

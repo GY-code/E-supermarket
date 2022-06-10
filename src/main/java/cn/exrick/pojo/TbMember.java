@@ -32,6 +32,16 @@ public class TbMember implements Serializable{
 
     private Long balance;
 
+    private Integer vipLevel;
+
+    public Integer getVipLevel() {
+        return vipLevel;
+    }
+
+    public void setVipLevel(Integer vipLevel) {
+        this.vipLevel = vipLevel;
+    }
+
     public Long getId() {
         return id;
     }

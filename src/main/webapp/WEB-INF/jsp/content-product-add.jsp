@@ -6,28 +6,29 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="Bookmark" href="/icon/favicon.ico" >
-    <link rel="Shortcut Icon" href="/icon/favicon.ico" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="Bookmark" href="/icon/favicon.ico">
+    <link rel="Shortcut Icon" href="/icon/favicon.ico"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/html5shiv.js"></script>
     <script type="text/javascript" src="lib/respond.min.js"></script>
 
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css"/>
 
-    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css"/>
     <!--[if IE 6]>
-    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <!--/meta 作为公共模版分离出去-->
 
-    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -69,7 +70,8 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">选择展示商品：</label>
             <div class="formControls col-xs-8 col-sm-6">
-				<input type="text" onclick="chooseProduct()" readonly class="input-text" placeholder="请点击选择按钮选择关联商品" id="title" name="title" style="width: 65%">
+                <input type="text" onclick="chooseProduct()" readonly class="input-text" placeholder="请点击选择按钮选择关联商品"
+                       id="title" name="title" style="width: 65%">
                 <input type="button" onclick="chooseProduct()" class="btn btn-secondary radius" value="选择关联商品">
                 <input type="button" onclick="clearChooseProduct()" class="btn btn-default radius" value="清空">
             </div>
@@ -77,7 +79,8 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">所选商品ID：</label>
             <div class="formControls col-xs-8 col-sm-4">
-                <input type="text" onclick="chooseProduct()" readonly placeholder="请点击选择按钮选择关联商品" class="input-text" id="productId" name="productId">
+                <input type="text" onclick="chooseProduct()" readonly placeholder="请点击选择按钮选择关联商品" class="input-text"
+                       id="productId" name="productId">
             </div>
         </div>
         <input type="text" name="picUrl" id="picUrl" hidden/>
@@ -88,11 +91,11 @@
                     <div class="queueList">
                         <div id="dndArea" class="placeholder">
                             <div name="filePicker" id="filePicker-2"></div>
-                            <p>或将照片拖到这里，最多可选1张</p>
+                            <p>默认选择默认商品图片</p>
                         </div>
                     </div>
                     <div class="statusBar" style="display:none;">
-                        <div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
+                        <div class="progress"><span class="text">0%</span> <span class="percentage"></span></div>
                         <div class="info"></div>
                         <div class="btns">
                             <div id="filePicker2"></div>
@@ -104,8 +107,12 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button id="saveButton" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交</button>
-                <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                <button id="saveButton" class="btn btn-primary radius" type="submit"><i
+                        class="Hui-iconfont">&#xe632;</i> 保存并提交
+                </button>
+                <button onClick="layer_close();" class="btn btn-default radius" type="button">
+                    &nbsp;&nbsp;取消&nbsp;&nbsp;
+                </button>
             </div>
         </div>
     </form>
@@ -130,89 +137,88 @@
     $("#position").val(parent.position);
 
     var panelType = parent.panelType;
-    if(panelType==2||panelType==3){
+    if (panelType == 2 || panelType == 3) {
         $("#otherUrl").hide();
         showOption();
-        if(panelType==2){
+        if (panelType == 2) {
             $("#bannerImage1").show();
             $("#bannerImage2").show();
         }
-    }else{
+    } else {
         $("#bannerImage1").hide();
         $("#bannerImage2").hide();
     }
-    
+
     function showOption() {
         var v = $("#type").val();
-        if(v==0||v==2){
+        if (v == 0 || v == 2) {
             $("#inputOtherUrl").hide();
-        }else{
+        } else {
             $("#inputOtherUrl").show();
         }
     }
 
     function clearChooseProduct() {
-        setIdAndTitle("","");
+        setIdAndTitle("", "");
     }
 
-    function chooseProduct(){
-        layer_show("选择展示商品","choose-product",900,600);
+    function chooseProduct() {
+        layer_show("选择展示商品", "choose-product", 900, 600);
     }
 
-    function setIdAndTitle(id,title){
+    function setIdAndTitle(id, title) {
         $("#productId").val(id);
         $("#title").val(title);
     }
 
     //默认图片
-    var images="";
+    var images = "";
 
     //保存发布
     $("#product-add").validate({
-        rules:{
-            sortOrder:{
-                digits:true,
-                required:true,
-                maxlength:3,
+        rules: {
+            sortOrder: {
+                digits: true,
+                required: true,
+                maxlength: 3,
             },
         },
-        onkeyup:false,
-        focusCleanup:false,
-        success:"valid",
-        submitHandler:function(form){
-            var type=$("#type").val();
-            var fullUrl=$("#fullUrl").val();
-            var selectProductId=$("#productId").val();
-            if((type==0&&selectProductId=="")||(type==2&&selectProductId=="")){
-                layer.alert('请选择关联商品! ', {title: '错误信息',icon: 0});
+        onkeyup: false,
+        focusCleanup: false,
+        success: "valid",
+        submitHandler: function (form) {
+            var type = $("#type").val();
+            var fullUrl = $("#fullUrl").val();
+            var selectProductId = $("#productId").val();
+            if ((type == 0 && selectProductId == "") || (type == 2 && selectProductId == "")) {
+                layer.alert('请选择关联商品! ', {title: '错误信息', icon: 0});
                 return;
             }
-            if((type==1&&fullUrl=="")||(type==3&&fullUrl=="")){
-                layer.alert('请填写跳转链接! ', {title: '错误信息',icon: 0});
+            if ((type == 1 && fullUrl == "") || (type == 3 && fullUrl == "")) {
+                layer.alert('请填写跳转链接! ', {title: '错误信息', icon: 0});
                 return;
             }
-            if(images==""){
-                layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
-                return;
+            if (images == "") {
+                images = "http://localhost:9999/static/images/1a.jpg"
             }
             var index = layer.load(3);
             $(form).ajaxSubmit({
                 url: "/content/add",
                 type: "POST",
-                success: function(data) {
+                success: function (data) {
                     layer.close(index);
-                    if(data.success==true){
+                    if (data.success == true) {
                         parent.refresh();
                         parent.msgSuccess("添加成功!");
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
-                    }else{
-                        layer.alert('添加失败! '+data.message, {title: '错误信息',icon: 2});
+                    } else {
+                        layer.alert('添加失败! ' + data.message, {title: '错误信息', icon: 2});
                     }
                 },
-                error:function(XMLHttpRequest) {
+                error: function (XMLHttpRequest) {
                     layer.close(index);
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status, {title: '错误信息', icon: 2});
                 }
             });
         }
@@ -434,10 +440,10 @@
             // 当有文件添加进来时执行，负责view的创建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
-                    '<p class="title">' + file.name + '</p>' +
-                    '<p class="imgWrap"></p>' +
-                    '<p class="progress"><span></span></p>' +
-                    '</li>'),
+                        '<p class="title">' + file.name + '</p>' +
+                        '<p class="imgWrap"></p>' +
+                        '<p class="progress"><span></span></p>' +
+                        '</li>'),
 
                     $btns = $('<div class="file-panel">' +
                         '<span class="cancel">删除</span>' +
@@ -727,12 +733,12 @@
 
             };
             // 文件上传成功
-            uploader.on( 'uploadSuccess', function( file,data ) {
-                if(data.success==true){
-                    images=data.result;
+            uploader.on('uploadSuccess', function (file, data) {
+                if (data.success == true) {
+                    images = data.result;
                     $("#picUrl").val(images);
-                }else{
-                    alert("上传失败:"+data.message)
+                } else {
+                    alert("上传失败:" + data.message)
                 }
             });
 
@@ -755,13 +761,13 @@
             });
 
             uploader.onError = function (code) {
-                if(code=="Q_TYPE_DENIED"){
+                if (code == "Q_TYPE_DENIED") {
                     alert("文件类型不支持，仅支持gif,jpg,jpeg,bmp,png格式图片");
-                }else if(code=="F_DUPLICATE"){
+                } else if (code == "F_DUPLICATE") {
                     alert("文件已选中，请勿重复上传");
-                }else if(code="F_EXCEED_SIZE"){
+                } else if (code = "F_EXCEED_SIZE") {
                     alert("文件大小超出限制，单张图片不得超过5MB");
-                } else{
+                } else {
                     alert('Error: ' + code);
                 }
 

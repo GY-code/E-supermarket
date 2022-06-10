@@ -165,9 +165,8 @@
                 layer.alert('请填写跳转链接! ', {title: '错误信息',icon: 0});
                 return;
             }
-            if(images==""){
-                layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
-                return;
+            if(images===""){
+                images="http://localhost:9999/static/images/1a.jpg";
             }
             var index = layer.load(3);
             $(form).ajaxSubmit({

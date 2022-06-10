@@ -5,7 +5,7 @@
 <configuration>
 
     <!--引入数据库配置文件-->
-    <properties resource="conf/db.properties"/>
+<!--    <properties resource="conf/db.properties"/>-->
 
     <!--分页插件-->
     <plugins>
@@ -14,19 +14,20 @@
         </plugin>
     </plugins>
 
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}"/>
-                <property name="url" value="${jdbc.url}"/>
-                <property name="username" value="${jdbc.username}"/>
-                <property name="password" value="${jdbc.password}"/>
-            </dataSource>
-        </environment>
-    </environments>
+<!--    <environments default="development">-->
+<!--        <environment id="development">-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="${jdbc.driver}"/>-->
+<!--                <property name="url" value="${jdbc.url}"/>-->
+<!--                <property name="username" value="${jdbc.username}"/>-->
+<!--                <property name="password" value="${jdbc.password}"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+<!--    </environments>-->
 
-    <mappers>
-        <mapper resource="cn/exrick/mapper/TbCouponMapper.xml"/>
-    </mappers>
+<!--    <mappers>-->
+<!--        <mapper resource="cn/exrick/mapper/TbCouponMapper.xml"/>-->
+<!--        <mapper resource="cn/exrick/mapper/TbCartMemberMapper.xml"/>-->
+<!--    </mappers>-->
 </configuration>

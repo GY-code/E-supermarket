@@ -2,7 +2,7 @@ package cn.exrick.service;
 
 
 
-import cn.exrick.pojo.front.CartProduct;
+import cn.exrick.pojo.front.Cart;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public interface CartService {
 
     int addCart(long userId, long itemId, int num);
 
-    List<CartProduct> getCartList(long userId);
+    List<Cart> getCartList(long userId);
 
     int updateCartNum(long userId, long itemId, int num, int checked);
 

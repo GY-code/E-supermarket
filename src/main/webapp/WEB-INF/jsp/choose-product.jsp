@@ -59,7 +59,7 @@
 
     function imageShow(data){
         if(data==""||data==null){
-            return "http://ow2h3ee9w.bkt.clouddn.com/nopic.jpg";
+            return "http://localhost:9999/static/images/1a.jpg";
         }
         var images= new Array(); //定义一数组
         images=data.split(","); //字符分割

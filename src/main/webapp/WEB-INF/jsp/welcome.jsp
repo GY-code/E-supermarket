@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="Exrick">
     <link rel="Shortcut Icon" href="icon/x.png" />
-    <title>XMall后台管理系统 v1.0</title>
-    <meta name="keywords" content="XMall后台管理系统 v1.0,XMall,XMall购物商城后台管理系统">
-    <meta name="description" content="XMall后台管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
+    <title>超市电商管理系统 v1.0</title>
+    <meta name="keywords" content="超市电商管理系统 v1.0,XMall,超市电商后台管理系统">
+    <meta name="description" content="超市电商管理系统 v1.0，是一款电商后台管理系统，适合中小型CMS后台系统。">
 
     <!-- Bootstrap core CSS -->
     <link href="lib/flatlab/css/bootstrap.min.css" rel="stylesheet">
@@ -83,19 +83,19 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+                <%--<div class="col-lg-3 col-sm-6">
                     <section class="panel">
                         <div class="symbol blue">
                             <i class="icon-bar-chart"></i>
                         </div>
-                        <div class="value">
+                        &lt;%&ndash;<div class="value">
                             <h1 class=" count4">
                                 ...
                             </h1>
                             <p>浏览量</p>
-                        </div>
+                        </div>&ndash;%&gt;
                     </section>
-                </div>
+                </div>--%>
             </div>
             <!--state overview end-->
 
@@ -166,7 +166,7 @@
                     <!--custom chart end-->
                 </div>
 
-                <div class="col-lg-5">
+                <%--<div class="col-lg-5">
                     <!--widget start-->
                     <section class="panel">
                         <header class="panel-heading tab-bg-dark-navy-blue">
@@ -236,9 +236,9 @@
                         </div>
                     </section>
                     <!--widget end-->
-                </div>
+                </div>--%>
             </div>
-            <div class="row">
+            <%--<div class="row">
                 <div class="col-lg-4">
                     <!--user info table start-->
                     <section class="panel">
@@ -251,7 +251,7 @@
                                 <p>Author</p>
                             </div>
                         </div>
-                        <table class="table table-hover personal-task">
+                       &lt;%&ndash; <table class="table table-hover personal-task">
                             <tbody>
                             <tr>
                                 <td>
@@ -302,7 +302,7 @@
                                 <td> <span style="margin-top: -1px" class="label label-success pull-right r-activity">02</span></td>
                             </tr>
                             </tbody>
-                        </table>
+                        </table>&ndash;%&gt;
                     </section>
                     <!--user info table end-->
                 </div>
@@ -310,16 +310,15 @@
                     <!--work progress start-->
                     <section class="panel">
                         <div class="panel-body progress-panel">
-                            <div class="task-progress">
+                           &lt;%&ndash; <div class="task-progress">
                                 <h1>工作进度</h1>
-                                <p>Exrick</p>
-                            </div>
-                            <div class="task-option">
+                            </div>&ndash;%&gt;
+                          &lt;%&ndash;  <div class="task-option">
                                 <select class="styled">
                                     <option>Exrick</option>
                                     <option>欢迎您加入开发</option>
                                 </select>
-                            </div>
+                            </div>&ndash;%&gt;
                         </div>
                         <table class="table table-hover personal-task">
                             <tbody>
@@ -610,15 +609,14 @@
                     </section>
                     <!--twitter feedback end-->
                 </div>
-            </div>
+            </div>--%>
         </section>
     </section>
     <!--main content end-->
     <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">
-            Copyright &copy;2017 <a href="http://blog.exrick.cn" target="_blank">exrick.cn</a> All Rights Reserved.
-            本后台系统由<a href="http://www.h-ui.net/" target="_blank"> H-ui</a>、<a href="https://themeforest.net/item/flatlab-bootstrap-3-responsive-admin-template/5902687" target="_blank">FlatLab </a>提供前端静态页面支持
+            数据库实践课程——超市电商管理后台系统
             <a href="#" class="go-top">
                 <i class="icon-angle-up"></i>
             </a>
@@ -749,7 +747,6 @@
         type: 'GET',
         success:function (data) {
             if(data.result==null||data.result==""||data.result.indexOf('错误')>=0){
-                layer.msg("无法获取您的IP，天气信息获取失败");
                 return ;
             }
             var json=JSON.parse(data.result);

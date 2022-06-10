@@ -23,7 +23,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -62,6 +61,15 @@ public class OrderFrontServiceImpl implements OrderFrontService {
 
     @Autowired
     private EmailUtil emailUtil;
+
+    @Override
+    public int commentOrder(String orderId, String comment) {
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("orderId",orderId);
+        hashMap.put("buyerMessage",comment);
+        int i = tbOrderMapper.updateBuyMessage(hashMap);
+        return 1;
+    }
 
     @Override
     public PageOrder getOrderList(Long userId, int page, int size) {
@@ -310,6 +318,18 @@ public class OrderFrontServiceImpl implements OrderFrontService {
             throw new XmallException("删除物流失败");
         }
         return 1;
+    }
+    @Override
+    public String payOrderSuc(String orderId){
+        //设置订单为已付款
+        TbOrder tbOrder=tbOrderMapper.selectByPrimaryKey(orderId);
+        tbOrder.setStatus(1);
+        tbOrder.setUpdateTime(new Date());
+        tbOrder.setPaymentTime(new Date());
+        if(tbOrderMapper.updateByPrimaryKey(tbOrder)!=1){
+            throw new XmallException("更新订单失败");
+        }
+        return "1";
     }
 
     @Override
@@ -586,6 +606,7 @@ public class OrderFrontServiceImpl implements OrderFrontService {
         }
         return 1;
     }
+
 
     /**
      * 判断订单是否超时未支付

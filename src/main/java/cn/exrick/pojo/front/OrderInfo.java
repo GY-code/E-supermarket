@@ -21,6 +21,7 @@ public class OrderInfo implements Serializable{
 
     private BigDecimal orderTotal;
 
+
     public BigDecimal getOrderTotal() {
         return orderTotal;
     }

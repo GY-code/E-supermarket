@@ -444,4 +444,14 @@
     and status = 4
     GROUP BY MONTH(create_time)
   </select>
+
+  <update id="updateBuyMessage" parameterType="map">
+    update tb_order
+    <set>
+      buyer_message = #{buyerMessage}
+    </set>
+    <where>
+      order_id = #{orderId}
+    </where>
+  </update>
 </mapper>

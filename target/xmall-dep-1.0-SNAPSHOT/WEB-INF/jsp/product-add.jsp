@@ -10,28 +10,29 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="Bookmark" href="/icon/favicon.ico" >
-    <link rel="Shortcut Icon" href="/icon/favicon.ico" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="Bookmark" href="/icon/favicon.ico">
+    <link rel="Shortcut Icon" href="/icon/favicon.ico"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/html5shiv.js"></script>
     <script type="text/javascript" src="lib/respond.min.js"></script>
 
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css"/>
 
-    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css"/>
     <!--[if IE 6]>
-    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <!--/meta 作为公共模版分离出去-->
 
-    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="page-container">
@@ -52,8 +53,9 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品分类：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" hidden class="input-text" id="cid" name="cid" >
-				<input type="text" onclick="chooseCategory()" readonly class="input-text" value="" placeholder="请点击选择按钮选择商品分类" id="cname" name="cname" style="width:50%">
+                <input type="text" hidden class="input-text" id="cid" name="cid">
+                <input type="text" onclick="chooseCategory()" readonly class="input-text" value=""
+                       placeholder="请点击选择按钮选择商品分类" id="cname" name="cname" style="width:50%">
                 <input type="button" onclick="chooseCategory()" class="btn btn-secondary radius" value="选择类别">
             </div>
         </div>
@@ -61,19 +63,24 @@
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品展示价格：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" name="price" placeholder="请输入正确金额" value="" class="input-text" style="width:50%">
-                元</div>
+                元
+            </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>库存数量：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="num" id="num" placeholder="0~99999" value="" class="input-text" style="width:50%">
-                件</div>
+                <input type="text" name="num" id="num" placeholder="0~99999" value="" class="input-text"
+                       style="width:50%">
+                件
+            </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>购买限制数量：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" name="limitNum" id="limitNum" placeholder="0~9999" value="" class="input-text" style="width:50%">
-                件</div>
+                <input type="text" name="limitNum" id="limitNum" placeholder="0~9999" value="" class="input-text"
+                       style="width:50%">
+                件
+            </div>
         </div>
         <input type="text" name="image" id="image" hidden/>
         <div class="row cl">
@@ -83,11 +90,11 @@
                     <div class="queueList">
                         <div id="dndArea" class="placeholder">
                             <div name="filePicker" id="filePicker-2"></div>
-                            <p>或将照片拖到这里，最多可选5张</p>
+                            <p> <p style="color: tomato">默认选择默认商品图片</p></p>
                         </div>
                     </div>
                     <div class="statusBar" style="display:none;">
-                        <div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
+                        <div class="progress"><span class="text">0%</span> <span class="percentage"></span></div>
                         <div class="info"></div>
                         <div class="btns">
                             <div id="filePicker2"></div>
@@ -105,8 +112,12 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button id="saveButton" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并发布</button>
-                <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                <button id="saveButton" class="btn btn-primary radius" type="submit"><i
+                        class="Hui-iconfont">&#xe632;</i> 保存并发布
+                </button>
+                <button onClick="layer_close();" class="btn btn-default radius" type="button">
+                    &nbsp;&nbsp;取消&nbsp;&nbsp;
+                </button>
             </div>
         </div>
     </form>
@@ -124,115 +135,114 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script>
-<link rel="stylesheet" href="lib/kindeditor/themes/default/default.css" />
-<link rel="stylesheet" href="lib/kindeditor/plugins/code/prettify.css" />
+<link rel="stylesheet" href="lib/kindeditor/themes/default/default.css"/>
+<link rel="stylesheet" href="lib/kindeditor/plugins/code/prettify.css"/>
 <script charset="utf-8" src="lib/kindeditor/kindeditor.js"></script>
 <script charset="utf-8" src="lib/kindeditor/lang/zh-CN.js"></script>
 <script charset="utf-8" src="lib/kindeditor/plugins/code/prettify.js"></script>
 <script type="text/javascript">
     var editor;
 
-    jQuery.validator.addMethod("decimalsValue",function(value, element) {
-        var decimalsValue =/^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/ ;
+    jQuery.validator.addMethod("decimalsValue", function (value, element) {
+        var decimalsValue = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
         return this.optional(element) || (decimalsValue.test(value));
     }, "金额必须大于0并且只能精确到分");
 
-    function giveCid(cid){
+    function giveCid(cid) {
         $("#cid").val(cid);
     }
 
-    function giveCName(cname){
+    function giveCName(cname) {
         $("#cname").val(cname);
     }
 
-    function chooseCategory(){
-        layer_show("选择商品分类","choose-category",300,510);
+    function chooseCategory() {
+        layer_show("选择商品分类", "choose-category", 300, 510);
     }
 
     //保存发布
     $("#product-add").validate({
-        rules:{
-            title:{
-                required:true,
+        rules: {
+            title: {
+                required: true,
             },
-            sellPoint:{
-                required:true,
+            sellPoint: {
+                required: true,
             },
-            cname:{
-                required:true,
+            cname: {
+                required: true,
             },
-            price:{
-                decimalsValue:true,
-                required:true,
-                maxlength:10,
+            price: {
+                decimalsValue: true,
+                required: true,
+                maxlength: 10,
             },
-            num:{
-                digits:true,
-                required:true,
-                maxlength:5,
+            num: {
+                digits: true,
+                required: true,
+                maxlength: 5,
             },
-            limitNum:{
-                digits:true,
-                required:true,
-                maxlength:4,
+            limitNum: {
+                digits: true,
+                required: true,
+                maxlength: 4,
             },
         },
-        onkeyup:false,
-        focusCleanup:false,
-        success:"valid",
-        submitHandler:function(form){
-            if(images==null){
-                layer.alert('请上传商品展示缩略图! ', {title: '错误信息',icon: 0});
-                return;
+        onkeyup: false,
+        focusCleanup: false,
+        success: "valid",
+        submitHandler: function (form) {
+            if (images == null) {
+                images = "http://localhost:9999/static/images/1a.jpg";
             }
             var index = layer.load(3);
             editor.sync();
             $(form).ajaxSubmit({
                 url: "/item/add",
                 type: "POST",
-                success: function(data) {
+                success: function (data) {
                     layer.close(index);
-                    if(data.success==true){
-                        if(parent.location.pathname!='/'){
+                    if (data.success == true) {
+                        if (parent.location.pathname != '/') {
                             parent.productCount();
                             parent.refresh();
                             parent.msgSuccess("添加成功!");
                             var index = parent.layer.getFrameIndex(window.name);
                             parent.layer.close(index);
-                        }else{
+                        } else {
                             layer.confirm('添加成功!', {
-                                btn: ['确认'],icon: 1
-                            }, function(){
+                                btn: ['确认'], icon: 1
+                            }, function () {
                                 var index = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(index);
                             });
                         }
-                    }else{
-                        layer.alert(data.message, {title: '错误信息',icon: 2});
+                    } else {
+                        layer.alert(data.message, {title: '错误信息', icon: 2});
                     }
                 },
-                error:function(XMLHttpRequest) {
+                error: function (XMLHttpRequest) {
                     layer.close(index);
-                    layer.alert('数据处理失败! 错误码:'+XMLHttpRequest.status,{title: '错误信息',icon: 2});
+                    layer.alert('数据处理失败! 错误码:' + XMLHttpRequest.status, {title: '错误信息', icon: 2});
                 }
             });
         }
     });
 
-    KindEditor.ready(function(K) {
+    KindEditor.ready(function (K) {
         editor = K.create('textarea[name="detail"]', {
-            cssPath : 'lib/kindeditor/plugins/code/prettify.css',
-            uploadJson : '/kindeditor/imageUpload',
-            fileManagerJson : '/kindeditor/imageUpload',
-            allowFileManager : false,
-            height : '400px',
-            afterCreate : function() {
+            cssPath: 'lib/kindeditor/plugins/code/prettify.css',
+            uploadJson: '/kindeditor/imageUpload',
+            fileManagerJson: '/kindeditor/imageUpload',
+            allowFileManager: false,
+            height: '400px',
+            afterCreate: function () {
                 var self = this;
-                K.ctrl(document, 13, function() {
+                K.ctrl(document, 13, function () {
                     self.sync();
                     document.forms['product-add'].submit();
                 });
-                K.ctrl(self.edit.doc, 13, function() {
+                K.ctrl(self.edit.doc, 13, function () {
                     self.sync();
                     document.forms['product-add'].submit();
                 });
@@ -241,7 +251,7 @@
         prettyPrint();
     });
 
-    var images=null;
+    var images = null;
 
     (function ($) {
         $('.skin-minimal input').iCheck({
@@ -464,10 +474,10 @@
             // 当有文件添加进来时执行，负责view的创建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
-                    '<p class="title">' + file.name + '</p>' +
-                    '<p class="imgWrap"></p>' +
-                    '<p class="progress"><span></span></p>' +
-                    '</li>'),
+                        '<p class="title">' + file.name + '</p>' +
+                        '<p class="imgWrap"></p>' +
+                        '<p class="progress"><span></span></p>' +
+                        '</li>'),
 
                     $btns = $('<div class="file-panel">' +
                         '<span class="cancel">删除</span>' +
@@ -773,21 +783,20 @@
 
             };
             // 文件上传成功
-            uploader.on( 'uploadSuccess', function( file,data ) {
+            uploader.on('uploadSuccess', function (file, data) {
 
-                if(data.success==true){
-                    if(images==null){
-                        images=data.result;
-                    }else{
-                        images+=","+data.result;
+                if (data.success == true) {
+                    if (images == null) {
+                        images = data.result;
+                    } else {
+                        images += "," + data.result;
                     }
                     $("#image").val(images);
-                }else{
-                    alert("上传失败:"+data.message)
+                } else {
+                    alert("上传失败:" + data.message)
                 }
 
             });
-
 
 
             uploader.on('all', function (type) {
@@ -809,13 +818,13 @@
             });
 
             uploader.onError = function (code) {
-                if(code=="Q_TYPE_DENIED"){
+                if (code == "Q_TYPE_DENIED") {
                     alert("文件类型不支持，仅支持gif,jpg,jpeg,bmp,png格式图片");
-                }else if(code=="F_DUPLICATE"){
+                } else if (code == "F_DUPLICATE") {
                     alert("文件已选中，请勿重复上传");
-                }else if(code="F_EXCEED_SIZE"){
+                } else if (code = "F_EXCEED_SIZE") {
                     alert("文件大小超出限制，单张图片不得超过5MB");
-                } else{
+                } else {
                     alert('Error: ' + code);
                 }
 
