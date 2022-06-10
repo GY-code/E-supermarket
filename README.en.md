@@ -1,4 +1,4 @@
-# E-commerce
+# E-supermarket
 
 ## Introduction
 Front-end and back-end separated supermarket e-commerce system

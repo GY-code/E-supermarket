@@ -1,4 +1,4 @@
-# E-commerce
+# E-supermarket
 
 ## 介绍
 前后端分离的超市电商系统
